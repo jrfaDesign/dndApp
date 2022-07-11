@@ -7,6 +7,7 @@ import Card from "../../Components/cards/index"
 import SpellListImg from "../../Assets/imgs/spell-list.jpg"
 import SpellBookImg from "../../Assets/imgs/spell-book.jpg"
 import CommingSoonImage from "../../Assets/imgs/comming-soon.jpg"
+import SpellSlotsImage from "../../Assets/imgs/spell-slots.png"
 
 function HomePage() {
 
@@ -26,16 +27,18 @@ function HomePage() {
         />
 
         <Card 
-          imgSrc = {CommingSoonImage}
-          pageTitle = {"Coming Soon..."}
+          imgSrc = {SpellSlotsImage}
+          pageTitle = {"Spell Slots"}
           link={""}
         />
 
         <Card 
           imgSrc = {CommingSoonImage}
-          pageTitle = {"Spell Slots"}
+          pageTitle = {"Coming Soon..."}
           link={""}
         />
+
+        
       </CardsContainer>
 
     </Container>
