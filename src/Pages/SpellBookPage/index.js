@@ -26,7 +26,7 @@ const MainContainer = styled.div `
   max-width:69%;
   width:100%;  
 
-  background-color: #1D2B49;
+  background-color: #121C35;
   border-radius: 8px;
 
 `

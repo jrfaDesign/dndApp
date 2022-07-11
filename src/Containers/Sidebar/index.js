@@ -64,7 +64,7 @@ export default function SideBar() {
 const Container = styled.div `
   max-width:28%;
   width:100%;
-  background: #1D2B49;
+  background: #121C35;
   border-radius: 8px;
 ` 
 const Wrapper = styled.div `
