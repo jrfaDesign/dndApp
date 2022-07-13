@@ -43,7 +43,7 @@ const CardLayout = styled.div`
     :hover {
         width: 530px;
         height: 720px;
-        background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.53)),url(${props => props.imgSrc ? props.imgSrc : "#000"});
+        background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.45)),url(${props => props.imgSrc ? props.imgSrc : "#000"});
         box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.4);
 
     }
