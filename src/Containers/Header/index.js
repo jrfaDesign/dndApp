@@ -62,9 +62,16 @@ const LinkAsBtn = styled(NavLink) `
     
     border-bottom: 2px solid #3290FF;
     transition: all 0.5s;
-    background: linear-gradient(180deg, rgba(50, 144, 255, 0) 30%, rgba(50, 144, 255, 0.07) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.07) 100%);
+    border-bottom: 2px solid #FFF;
+  },
+
+  &:active{
     border-bottom: 2px solid #3290FF;
-  };
+    transition: all 0.5s;
+    background: linear-gradient(180deg, rgba(50, 144, 255, 0) 30%, rgba(50, 144, 255, 0.07) 100%);
+    border-bottom: 2px solid #3290FF
+  }
   
 
 

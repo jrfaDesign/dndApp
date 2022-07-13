@@ -1,6 +1,16 @@
 import React from "react"
+import ReactDom from "react-dom"
+
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+
+
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 
 //Add Components here
 import Card from "../../Components/cards/index"
@@ -13,17 +23,72 @@ function HomePage() {
 
   return (
     <Container>
+      
+
       <CardsContainer>
-        <Card 
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={-200}
+        slidesPerGroup={1}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <Card 
+            imgSrc = {SpellListImg}
+            pageTitle = {"Spell List"}
+            link= {"/spell-list"}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card 
+            imgSrc = {SpellBookImg}
+            pageTitle = {"My Spell Book"}
+            link={"/my-spell-book"}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card 
+            imgSrc = {SpellSlotsImage}
+            pageTitle = {"Spell Slots"}
+            link={""}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card 
+            imgSrc = {CommingSoonImage}
+            pageTitle = {"Coming Soon..."}
+            link={""}
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card 
+            imgSrc = {CommingSoonImage}
+            pageTitle = {"Coming Soon..."}
+            link={""}
+          />
+        </SwiperSlide>
+
+      </Swiper>
+      
+      
+
+        {/* <Card 
           imgSrc = {SpellListImg}
           pageTitle = {"Spell List"}
-          link= {"spell-list"}
+          link= {"/spell-list"}
         />
 
         <Card 
           imgSrc = {SpellBookImg}
           pageTitle = {"My Spell Book"}
-          link={"my-spell-book"}
+          link={"/my-spell-book"}
         />
 
         <Card 
@@ -36,7 +101,7 @@ function HomePage() {
           imgSrc = {CommingSoonImage}
           pageTitle = {"Coming Soon..."}
           link={""}
-        />
+        /> */}
 
         
       </CardsContainer>

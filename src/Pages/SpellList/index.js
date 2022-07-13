@@ -24,7 +24,8 @@ const Container = styled.div `
 ` 
 
 const MainContainer = styled.div `
-  max-width:69%;
+  margin-left: 20px;
+  padding: 20px;
   width:100%;  
   background-color: #121C35;
   border-radius: 8px;
