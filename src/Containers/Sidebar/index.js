@@ -1,75 +1,115 @@
 import React from 'react';
 import styled from "styled-components"
 
+import Form from 'react-bootstrap/Form';
+import Select from "../../Components/select/index.js"
+import Check from "../../Components/checkRadio/index.js"
+
+import { IoMdSearch } from "react-icons/io"
+
 export default function SideBar() {
+
+  const handleSelect = (e) => {
+    console.log(e)
+  }
+
+
   return (
+    
     <Container>
-      <Wrapper>
-        <SearchWrapper>
-          <Input placeholder="Spell Name..."></Input>
-        </SearchWrapper>
+      <Form>
+               
+        <Wrapper>
+          <SearchWrapper>
+            <IoMdSearch />
+            <Input placeholder="Spell Name..."></Input>
+          </SearchWrapper>
 
-        <select name="cars" id="cars" >
-          <option value="volvo">Cantrip</option>
-          <option value="saab">1st Level</option>
-          <option value="mercedes">2nd Level</option>
-          <option value="audi">3rd Level</option>
-          <option value="saab">4th Level</option>
-          <option value="mercedes">5th Level</option>
-          <option value="audi">6th Level</option>
-          <option value="saab">7th Level</option>
-          <option value="mercedes">8th Level</option>
-          <option value="audi">9th Level</option>
-        </select>
+          <Select 
+          placeholder= "Spell Level"
+          onChange={handleSelect}
+          >
+            <StyledOption value="0">Cantrip</StyledOption>
+            <StyledOption value="1">1st Level</StyledOption>
+            <StyledOption value="2">2nd Level</StyledOption>
+            <StyledOption value="3">3rd Level</StyledOption>
+            <StyledOption value="4">4th Level</StyledOption>
+            <StyledOption value="5">5th Level</StyledOption>
+            <StyledOption value="6">6th Level</StyledOption>
+            <StyledOption value="7">7th Level</StyledOption>
+            <StyledOption value="8">8th Level</StyledOption>
+            <StyledOption value="9">9th Level</StyledOption>
+          </Select> 
 
-        <select name="cars" id="cars" >
-          <option value="volvo">Artificer</option>
-          <option value="saab">Bard</option>
-          <option value="mercedes">Druid</option>
-          <option value="audi">Paladin</option>
-          <option value="saab">Ranger</option>
-          <option value="audi">Sorcerer</option>
-          <option value="saab">Warlock</option>
-          <option value="mercedes">Wizard</option>
-        </select>
-        
-        <select name="cars" id="cars" >
-          <option value="volvo">Abjuration</option>
-          <option value="saab">Conjuration</option>
-          <option value="mercedes">Divination</option>
-          <option value="audi">Enchantment</option>
-          <option value="saab">Evocation</option>
-          <option value="mercedes">Illusion</option>
-          <option value="audi">Necromancy</option>
-          <option value="saab">Transmutation</option>
-        </select>
+          <Select
+            placeholder= "Spell Level"
+            onChange={handleSelect}
+            >
+            <StyledOption value="Artificer">Artificer</StyledOption>
+            <StyledOption value="Bard">Bard</StyledOption>
+            <StyledOption value="Druid">Druid</StyledOption>
+            <StyledOption value="Paladin">Paladin</StyledOption>
+            <StyledOption value="Ranger">Ranger</StyledOption>
+            <StyledOption value="Sorcerer">Sorcerer</StyledOption>
+            <StyledOption value="Warlock">Warlock</StyledOption>
+          </Select>
 
-        <div>
-        <input type="checkbox" id="check_1" name="check_1" value="check_1"/>
-        <label for="check_1">V</label>
-        <input type="checkbox" id="check_1" name="check_1" value="check_1"/>
-        <label for="check_1">S</label>
-        <input type="checkbox" id="check_1" name="check_1" value="check_1"/>
-        <label for="check_1">M</label>
-        </div>
+          <Select
+          placeholder= "Spell Level"
+          onChange={handleSelect}
+          >
+            <StyledOption value="Artificer">Abjuration</StyledOption>
+            <StyledOption value="Bard">Conjuration</StyledOption>
+            <StyledOption value="Druid">Divination</StyledOption>
+            <StyledOption value="Paladin">Enchantment</StyledOption>
+            <StyledOption value="Ranger">Evocation</StyledOption>
+            <StyledOption value="Sorcerer">Illusion</StyledOption>
+            <StyledOption value="Warlock">Necromancy</StyledOption>
+            <StyledOption value="Warlock">Transmutation</StyledOption>
+          </Select>
+
+          <CheckBoxWrapper>
+            <Check
+              inline
+              label="V"
+              name="v"
+              type='checkbox'
+              id={`inline-'checkbox'-1`}        
+            /> 
+            <Check
+              inline
+              label="S"
+              name="s"
+              type='checkbox'
+              id={`inline-'checkbox'-2`}        
+            /> 
+            <Check
+              inline
+              label="M"
+              name="m"
+              type='checkbox'
+              id={`inline-'checkbox'-3`}        
+            /> 
+          </CheckBoxWrapper>
 
 
-        
-      </Wrapper>
+
+          
+          
+        </Wrapper>
+      </Form>
     </Container>
   )
 }
   
 
 const Container = styled.div `
-  max-width:28%;
-  width:100%;
   background: #121C35;
   border-radius: 8px;
 ` 
 const Wrapper = styled.div `
   padding: 25px 20px;
-  gap: 10px;
+  gap: 20px;
 
   display: flex;
   flex-direction: column;
@@ -80,19 +120,52 @@ const Wrapper = styled.div `
 `
 
 const SearchWrapper = styled.div `
+  display: flex;
+  align-items: center;
   background: #202A41;
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 6.5px;
-  padding: 2px 0px;
+  padding: 10px 10px 9px 10px;
+
+  svg{
+    margin:0px 3px;
+  }
 `
 
 const Input = styled.input `
   background: transparent !important;
   border: none;
-  margin: 0px 15px;
+  margin: 0px 5px;
 
   font-size: 14px;
 
   :focus{
     outline:0;
+`
+
+const StyledOption = styled.option`
+    color: white;
+    border: none;
+    border-radius: 6.5px;
+    hover{
+      background-color:red;
+    }
+`
+
+const CheckBoxWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-content: stretch;
+  align-items: center;
+  gap: 20px;
+
+  
+
+  label{
+    margin-left:4px;
+
+  }
+
 `

@@ -20,8 +20,8 @@ const Container = styled.div`
 `
 
 const CardLayout = styled.div`
-    width: 350px;
-    height: 600px;
+    width: 500px;
+    height: 700px;
 
     display: flex;
     flex-direction: row;
@@ -41,8 +41,8 @@ const CardLayout = styled.div`
     
 
     :hover {
-        width: 370px;
-        height: 620px;
+        width: 530px;
+        height: 720px;
         background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.53)),url(${props => props.imgSrc ? props.imgSrc : "#000"});
         box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.4);
 
