@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/home/static/css/main.4bda809e.css",
-    "main.js": "/home/static/js/main.8b0550d0.js",
+    "main.js": "/home/static/js/main.985b45d2.js",
     "static/media/spell-list.jpg": "/home/static/media/spell-list.05071564eb286680dc7d.jpg",
     "static/media/spell-book.jpg": "/home/static/media/spell-book.1ffc4c54eb32a06a23c2.jpg",
     "static/media/comming-soon.jpg": "/home/static/media/comming-soon.514702c7fa97c14a770f.jpg",
     "static/media/spell-slots.png": "/home/static/media/spell-slots.099364eaedd349f158b1.png",
     "index.html": "/home/index.html",
     "main.4bda809e.css.map": "/home/static/css/main.4bda809e.css.map",
-    "main.8b0550d0.js.map": "/home/static/js/main.8b0550d0.js.map"
+    "main.985b45d2.js.map": "/home/static/js/main.985b45d2.js.map"
   },
   "entrypoints": [
     "static/css/main.4bda809e.css",
-    "static/js/main.8b0550d0.js"
+    "static/js/main.985b45d2.js"
   ]
 }
