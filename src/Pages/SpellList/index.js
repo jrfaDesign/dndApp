@@ -1,8 +1,10 @@
 import React from "react";  
 import styled from "styled-components";
 
+import Loading from "../../Components/loading/index.js"
 import SpellFilerSideBar from "../../Containers/SpellFilterSidebar";
 import SpellListItem from "../../Containers/SpellListItem";
+
 
 function SpellList() {
   const API = "https://www.dnd5eapi.co/api"
@@ -52,7 +54,14 @@ function SpellList() {
                 )
               })
               :
-              <h1>(: Loading :)</h1>
+              <LoadingContainer>
+                <Loading 
+                  size = {70}
+                  color = "#ffffff"
+                  loading = {true}
+                />
+
+              </LoadingContainer>
             }
               
             </Body>
@@ -90,11 +99,15 @@ const SpellListContainer = styled.div`
 const Header = styled.div `
   margin-bottom: 15px;
   display: flex;
-  padding: 0px 8px;
+  padding: 0px 8px 15px 8px;
+
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  borderbottom-radius:0 10px 10px 0;
   
   h4{
-
-    width: 19.8%;
+    font-size:20px;
+    width: 19.7%;
   }
 
 `
@@ -102,4 +115,12 @@ const Header = styled.div `
 const Body = styled.div `
   overflow-y: scroll;
   height: 60vh;
+`
+
+const LoadingContainer = styled.div`
+  margin-top:150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 `

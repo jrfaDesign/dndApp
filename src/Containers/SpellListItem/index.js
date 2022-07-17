@@ -25,5 +25,9 @@ const Wrapper = styled.div`
     p{
         width: 20%;
     }
+    
+    :hover{
+        cursor: pointer;
+    }
 `
 
