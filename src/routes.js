@@ -8,8 +8,8 @@ const CreateRoutes = () => {
 
         <Routes>
             <Route path="/home" element={ <Home/> } />
-            <Route path="my-spell-book" element={ <SpellBookPage/> } />
-            <Route path="spell-list" element={ <SpellList/> } />
+            <Route path="/my-spell-book" element={ <SpellBookPage/> } />
+            <Route path="/spell-list" element={ <SpellList/> } />
         </Routes>
 
 

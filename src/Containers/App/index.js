@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components"
 
 //Add Container here
@@ -11,6 +12,8 @@ import { Routes, Route } from "react-router-dom"
 import Home from "../../Pages/Home/index"
 import SpellBookPage from '../../Pages/SpellBookPage/index'
 import SpellList from '../../Pages/SpellList/index'
+
+
 
 function App() {
   return (

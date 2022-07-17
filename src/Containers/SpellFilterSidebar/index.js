@@ -129,6 +129,15 @@ const SearchWrapper = styled.div `
 
   svg{
     margin:0px 3px;
+  };
+
+  transition:0.3s;
+
+  :hover,
+  :focus{
+    background: #202A41;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6.5px;
   }
 `
 
@@ -139,7 +148,8 @@ const Input = styled.input `
 
   font-size: 14px;
 
-  :focus{
+  :focus,
+  :hover{
     outline:0;
 `
 

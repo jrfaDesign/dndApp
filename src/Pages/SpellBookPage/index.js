@@ -1,11 +1,15 @@
+import React from "react";
 import styled from "styled-components";
 
-import SideBar from "../../Containers/Sidebar";
+import SpellFilerSideBar from "../../Containers/SpellFilterSidebar";
 
-function SpellBookPage() {
+
+
+
+function SpellBookPage() {   
     return (
       <Container>
-        <SideBar/>
+        <SpellFilerSideBar/>
         <MainContainer>
           <h1>Spell Book Page</h1>
         </MainContainer>
