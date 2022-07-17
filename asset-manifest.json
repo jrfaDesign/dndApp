@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/home/static/css/main.4bda809e.css",
-    "main.js": "/home/static/js/main.985b45d2.js",
-    "static/media/spell-list.jpg": "/home/static/media/spell-list.05071564eb286680dc7d.jpg",
-    "static/media/spell-book.jpg": "/home/static/media/spell-book.1ffc4c54eb32a06a23c2.jpg",
-    "static/media/comming-soon.jpg": "/home/static/media/comming-soon.514702c7fa97c14a770f.jpg",
-    "static/media/spell-slots.png": "/home/static/media/spell-slots.099364eaedd349f158b1.png",
-    "index.html": "/home/index.html",
-    "main.4bda809e.css.map": "/home/static/css/main.4bda809e.css.map",
-    "main.985b45d2.js.map": "/home/static/js/main.985b45d2.js.map"
+    "main.css": "/dndApp/static/css/main.4bda809e.css",
+    "main.js": "/dndApp/static/js/main.9e5fc93d.js",
+    "static/media/spell-list.jpg": "/dndApp/static/media/spell-list.05071564eb286680dc7d.jpg",
+    "static/media/spell-book.jpg": "/dndApp/static/media/spell-book.1ffc4c54eb32a06a23c2.jpg",
+    "static/media/comming-soon.jpg": "/dndApp/static/media/comming-soon.514702c7fa97c14a770f.jpg",
+    "static/media/spell-slots.png": "/dndApp/static/media/spell-slots.099364eaedd349f158b1.png",
+    "index.html": "/dndApp/index.html",
+    "main.4bda809e.css.map": "/dndApp/static/css/main.4bda809e.css.map",
+    "main.9e5fc93d.js.map": "/dndApp/static/js/main.9e5fc93d.js.map"
   },
   "entrypoints": [
     "static/css/main.4bda809e.css",
-    "static/js/main.985b45d2.js"
+    "static/js/main.9e5fc93d.js"
   ]
 }
