@@ -1,13 +1,64 @@
+import React from "react";  
 import styled from "styled-components";
 
-import SideBar from "../../Containers/Sidebar";
+import SpellFilerSideBar from "../../Containers/SpellFilterSidebar";
+import SpellListItem from "../../Containers/SpellListItem";
 
 function SpellList() {
+  const API = "https://www.dnd5eapi.co/api"
+
+  const [appData, setAppData] = React.useState ({})
+  const [loading, setLoading] = React.useState (false)
+
+  React.useEffect (() => {    
+    fetch(`${API}`)
+    .then(res => res.json())
+    .then(data => {
+        let allData
+        let keys = Object.keys(data)
+        allData = keys.map ( el => ({"key":el , "value": []}))
+         allData.forEach ( (value) => {
+          fetch(`${API}/${value.key}`)
+            .then(res => res.json())
+            .then(data => {
+              setAppData( prevState => ({...prevState, [value.key]:data.results}))
+            })
+         } )
+
+      })
+      .catch(err => alert(err)) 
+    }, [])
+
     return (
       <Container>
-        <SideBar/>
+        <SpellFilerSideBar/>
         <MainContainer>
-          <h1>Spell List Page</h1>
+          <SpellListContainer>
+            <Header>
+              <h4>Spell Name</h4>
+              <h4>Level</h4>
+              <h4>Class</h4>
+              <h4>Schools</h4>
+              <h4>Components</h4>
+            </Header>
+            <Body>
+            {appData.spells 
+              ?
+              appData.spells.map(el => {
+                return (
+                  <SpellListItem
+                    name={el.name}
+                  />
+                )
+              })
+              :
+              <h1>(: Loading :)</h1>
+            }
+              
+            </Body>
+            
+          </SpellListContainer>
+
         </MainContainer>
       </Container>
     )
@@ -31,4 +82,24 @@ const MainContainer = styled.div `
   border-radius: 8px;
 
 `
+
+const SpellListContainer = styled.div`
+
+`
   
+const Header = styled.div `
+  margin-bottom: 15px;
+  display: flex;
+  padding: 0px 8px;
+  
+  h4{
+
+    width: 19.8%;
+  }
+
+`
+
+const Body = styled.div `
+  overflow-y: scroll;
+  height: 60vh;
+`
