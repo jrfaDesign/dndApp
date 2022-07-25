@@ -7,29 +7,31 @@ import SpellListItem from "../../Containers/SpellListItem";
 
 
 function SpellList() {
-  const API = "https://www.dnd5eapi.co/api"
+  const API = "https://www.dnd5eapi.co/api/spells"
 
-  const [appData, setAppData] = React.useState ({})
-  const [loading, setLoading] = React.useState (false)
+  const [spellData, setSpellData] = React.useState ([])
+  const [loading, setLoading] = React.useState(false)
 
-  React.useEffect (() => {    
-    fetch(`${API}`)
-    .then(res => res.json())
-    .then(data => {
-        let allData
-        let keys = Object.keys(data)
-        allData = keys.map ( el => ({"key":el , "value": []}))
-         allData.forEach ( (value) => {
-          fetch(`${API}/${value.key}`)
+  React.useEffect (() => {   
+    setLoading(true)
+    
+    fetch (API)
+      .then (res => res.json())
+      .then (data => {
+        data.results.map ( spell => {
+          fetch(`${API}/${spell.index}`)
             .then(res => res.json())
             .then(data => {
-              setAppData( prevState => ({...prevState, [value.key]:data.results}))
+              setSpellData ( prevState => [...prevState, data])
             })
-         } )
-
+        })
+        setLoading(false)
+        
       })
-      .catch(err => alert(err)) 
     }, [])
+
+    console.log(spellData)
+
 
     return (
       <Container>
@@ -37,33 +39,43 @@ function SpellList() {
         <MainContainer>
           <SpellListContainer>
             <Header>
-              <h4>Spell Name</h4>
-              <h4>Level</h4>
-              <h4>Class</h4>
+              <h4>Level </h4>
+              <h4> <div> Spell Name </div></h4>
+              <h4>Casting Time</h4>
+              <h4>Range</h4>
               <h4>Schools</h4>
               <h4>Components</h4>
+              <h4></h4>
             </Header>
             <Body>
-            {appData.spells 
-              ?
-              appData.spells.map(el => {
-                return (
-                  <SpellListItem
-                    name={el.name}
-                  />
-                )
-              })
-              :
-              <LoadingContainer>
-                <Loading 
-                  size = {70}
-                  color = "#ffffff"
-                  loading = {true}
-                />
+              {
+                !loading
+                ?
+                  spellData.map ( (el, i) => {
+                    console.log(el)
+                    return (
+                      <SpellListItem
+                        key = {i}
 
-              </LoadingContainer>
-            }
-              
+                        level = {el.level}
+                        name = {el.name}
+                        casting_time = {el.casting_time}
+                        range = {el.range}
+                        school = {el.school.name}
+                        components = {el.components}
+                      />
+                    )
+                  })
+                : 
+                  <LoadingContainer>
+                    <Loading 
+                      size = {70}
+                      color = "#ffffff"
+                      loading = {loading}
+                    />
+                  </LoadingContainer>
+              }
+
             </Body>
             
           </SpellListContainer>
@@ -97,9 +109,13 @@ const SpellListContainer = styled.div`
 `
   
 const Header = styled.div `
+  display: grid;
+  grid-template-columns: 5% 25% 16.5% 16.5% 16.5% 16.5% 4%;
+  white-space: nowrap;
+  justify-items: stretch;
+
   margin-bottom: 15px;
-  display: flex;
-  padding: 0px 8px 15px 8px;
+  padding: 0px 20px 15px 8px;
 
 
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -107,7 +123,14 @@ const Header = styled.div `
   
   h4{
     font-size:20px;
-    width: 19.7%;
+
+    text-align: center;
+    
+  }
+
+  div {
+    margin-left: 50px;
+    text-align: left;
   }
 
 `
@@ -115,6 +138,29 @@ const Header = styled.div `
 const Body = styled.div `
   overflow-y: scroll;
   height: 60vh;
+
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #F3F6FF;
+  
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #3290FF;
+  padding: 20px 10px 20px 10px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 `
 
 const LoadingContainer = styled.div`
